@@ -10,14 +10,15 @@
                         <p class="text-center lead">Seus contatos estao abaixo</p>
 
                         <% if(contatos.length> 0) { %>
-                            <div class="responsive-table">
+                            <div class="table-responsive">
 
-                                <table class="table my-3">
+                                <table class="table">
                                     <tr>
                                         <td>NOME</td>
                                         <td>SOBRENOME</td>
                                         <td>TELEFONE</td>
                                         <td>E-MAIL</td>
+                                        <td colspan="2">OPÇÕES</td>
                                     </tr>
                                     <% for(let contato of contatos) {%>
                                         <tr>
