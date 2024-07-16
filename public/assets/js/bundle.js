@@ -151,6 +151,58 @@ var Login = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./frontend/modules/typeForm.js":
+/*!**************************************!*\
+  !*** ./frontend/modules/typeForm.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ selectForm)
+/* harmony export */ });
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var selectForm = /*#__PURE__*/function () {
+  function selectForm(formClass) {
+    _classCallCheck(this, selectForm);
+    this.button = document.getElementById(formClass);
+  }
+  _createClass(selectForm, [{
+    key: "init",
+    value: function init() {
+      this.events();
+    }
+  }, {
+    key: "events",
+    value: function events() {
+      var _this = this;
+      this.button.addEventListener('click', function () {
+        if (_this.button.textContent === 'Criar conta') {
+          _this.button.textContent = 'Entrar';
+          document.getElementById('div-cadastro').classList.remove('d-none');
+          document.getElementById('div-login').classList.add('d-none');
+          document.getElementById('title').textContent = 'Criar sua conta';
+          return;
+        }
+        _this.button.textContent = 'Criar conta';
+        document.getElementById('title').textContent = 'Entrar';
+        document.getElementById('div-cadastro').classList.add('d-none');
+        document.getElementById('div-login').classList.remove('d-none');
+      });
+    }
+  }]);
+  return selectForm;
+}();
+
+
+/***/ }),
+
 /***/ "./node_modules/core-js/internals/a-callable.js":
 /*!******************************************************!*\
   !*** ./node_modules/core-js/internals/a-callable.js ***!
@@ -30636,20 +30688,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_stable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_stable__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerator-runtime/runtime.js");
 /* harmony import */ var regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _modules_Login__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/Login */ "./frontend/modules/Login.js");
-/* harmony import */ var _modules_CadastroContato__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/CadastroContato */ "./frontend/modules/CadastroContato.js");
+/* harmony import */ var _modules_typeForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/typeForm */ "./frontend/modules/typeForm.js");
+/* harmony import */ var _modules_Login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/Login */ "./frontend/modules/Login.js");
+/* harmony import */ var _modules_CadastroContato__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/CadastroContato */ "./frontend/modules/CadastroContato.js");
 
 
 
 
-var login = new _modules_Login__WEBPACK_IMPORTED_MODULE_2__["default"]('.form-login');
-var cadastro = new _modules_Login__WEBPACK_IMPORTED_MODULE_2__["default"]('.form-cadastro');
-var cadastroContato = new _modules_CadastroContato__WEBPACK_IMPORTED_MODULE_3__["default"]('.form-cria');
-var editaContato = new _modules_CadastroContato__WEBPACK_IMPORTED_MODULE_3__["default"]('.form-edita');
+
+var login = new _modules_Login__WEBPACK_IMPORTED_MODULE_3__["default"]('.form-login');
+var cadastro = new _modules_Login__WEBPACK_IMPORTED_MODULE_3__["default"]('.form-cadastro');
+var cadastroContato = new _modules_CadastroContato__WEBPACK_IMPORTED_MODULE_4__["default"]('.form-cria');
+var editaContato = new _modules_CadastroContato__WEBPACK_IMPORTED_MODULE_4__["default"]('.form-edita');
+var trocaForm = new _modules_typeForm__WEBPACK_IMPORTED_MODULE_2__["default"]('showTypeForm');
 login.init();
 cadastro.init();
 cadastroContato.init();
 editaContato.init();
+trocaForm.init();
 
 //import './assets/css/style.css';
 })();
